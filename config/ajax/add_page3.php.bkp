@@ -1,0 +1,111 @@
+<?php
+	session_start();
+	require_once "../dbconnect.php";
+	require_once "../funlib/login_functions.php";
+	if (isset($_POST['department']) && isset($_POST['semester']) && isset($_POST['lab']) && isset($_POST['exp']) && ( isLogin() != null)) {
+		$depertment = $_POST['department'];
+		$semester = $_POST['semester'];
+		
+		
+?>
+					<form class="form-horizontal" role="form" action="add_exp.php" method="POST">
+									
+									<div class="form-group">
+										
+									<div class="row">
+										<div class="col-xs-8">
+											<h4 class="header green clearfix">
+									Editor
+									<span class="block pull-right">
+										<small class="grey middle">Choose style: &nbsp;</small>
+
+										<span class="btn-toolbar inline middle no-margin">
+											<span data-toggle="buttons" class="btn-group no-margin">
+												<label class="btn btn-sm btn-yellow">
+													1
+													<input type="radio" value="1" />
+												</label>
+
+												<label class="btn btn-sm btn-yellow active">
+													2
+													<input type="radio" value="2" />
+												</label>
+
+												<label class="btn btn-sm btn-yellow">
+													3
+													<input type="radio" value="3" />
+												</label>
+
+												<label class="btn btn-sm btn-yellow">
+													4
+													<input type="radio" value="4" />
+												</label>
+											</span>
+										</span>
+									</span>
+								</h4>
+
+								
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Experiment Introduction </label>
+
+									
+												<div class="wysiwyg-editor" id="editor1"></div>
+
+												<div class="hr hr-double dotted"></div>
+												<div> <input type="submit"></div>
+												<div class="hr hr-double dotted"></div>
+										</div>
+										</div><!-- /.col -->
+									</div>
+
+									
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Experiment Theory  </label>
+
+										<div class="col-sm-9">
+											<textarea  id="form-field-1" placeholder="Experiment Theory" name="theory" class="col-xs-10 col-sm-5" required ></textarea>
+										</div>
+										
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Experiment Objective  </label>
+
+										<div class="col-sm-9">
+											<textarea  id="form-field-1" placeholder="Experiment Objective" name="obj" class="col-xs-10 col-sm-5" required ></textarea>
+										</div>
+										
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Experiment Stimulation Path  </label>
+
+										<div class="col-sm-9">
+											<input type="text"  id="form-field-1" placeholder="Experiment Stimulation Path" name="path" class="col-xs-10 col-sm-5" required />
+										</div>
+										
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Experiment Quizzes  </label>
+
+										<div class="col-sm-9">
+											<textarea  id="form-field-1" placeholder="Experiment Quizzes" name="quiz" class="col-xs-10 col-sm-5" required ></textarea>
+										</div>
+										
+									</div>
+									<div class="form-group" align="center">
+										<input type="submit" name="add_exp" class="btn btn-info" value="Add Experiment" >
+										
+										
+									</div>
+									
+									 
+								</form>
+	
+	
+	<?php
+	}
+	?>
+	
